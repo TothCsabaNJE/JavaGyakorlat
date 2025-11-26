@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Új eredmény</title>
+</head>
+<body>
+<h1>Új eredmény hozzáadása</h1>
+<form action="#" th:action="@{/save}" th:object="${eredmeny}" method="post">
+<p><input type="date" th:field="*{datum}" placeholder="Dátum" required></p>
+    <p><input type="number" th:field="*{pilotaaz}" placeholder="Pilóta ID" required></p>
+    <p><input type="number" th:field="*{helyezes}" placeholder="Helyezés" required></p>
+    <p><input type="text" th:field="*{hiba}" placeholder="Hiba"></p>
+    <p><input type="text" th:field="*{csapat}" placeholder="Csapat" required></p>
+    <p><input type="text" th:field="*{tipus}" placeholder="Típus" required></p>
+    <p><input type="text" th:field="*{motor}" placeholder="Motor" required></p>
+    <p><input type="submit" value="Hozzáad" /></p>
+</form>
+</body>
+</html>
