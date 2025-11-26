@@ -11,6 +11,7 @@ public class F1Controller {
     @Autowired private gpRepo gpRepo;
     @Autowired private pilotaRepo pilotaRepo;
     @Autowired private eredmenyRepo eredmenyRepo;
+    @Autowired private messageRepo messageRepo;
 
     @GetMapping("/")
     public String standard(Model model) {
@@ -38,6 +39,7 @@ public class F1Controller {
 
     @GetMapping("/messages")
     public String messages(Model model) {
+        model.addAttribute("messages", messageRepo.findAll());
         return "messages";
     }
 
@@ -54,6 +56,7 @@ public class F1Controller {
 
     @PostMapping(value="/send")
     public String saveRes(@ModelAttribute message message) {
+        messageRepo.save(message);
         return "redirect:/";
     }
 

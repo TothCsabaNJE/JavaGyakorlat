@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-
+<div th:insert="menu"></div>
+<table>
+    <thead>
+    <th>Küldő neve</th>
+    <th>Üzenet</th>
+    </thead>
+    <tbody>
+    <tr th:each="message: ${messages}">
+        <td th:text="${message.sender}"></td>
+        <td th:text="${message.message}"></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

@@ -28,9 +28,9 @@ public class WebSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http.authorizeHttpRequests(
                         auth -> auth
-                                .requestMatchers("/register", "reg_compute").anonymous()
-                                .requestMatchers("/resources/**", "/", "home", "db", "crud", "new", "save", "edit/*", "edit").authenticated()
-                                .requestMatchers("contact", "messages", "delete/*", "delete").authenticated()
+                                .requestMatchers("/register", "reg_compute","/").anonymous()
+                                .requestMatchers("/resources/**", "home", "db", "crud", "/new","edit/*", "edit").authenticated()
+                                .requestMatchers("contact", "messages","delete/*", "delete", "save", "send").authenticated()
                                 .requestMatchers("/admin").hasRole("ADMIN")
                 ).formLogin(
                         form -> form
