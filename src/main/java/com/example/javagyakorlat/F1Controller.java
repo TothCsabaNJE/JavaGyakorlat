@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class F1Controller {
-    @Autowired private gpRepo gpRepo;
-    @Autowired private pilotaRepo pilotaRepo;
     @Autowired private eredmenyRepo eredmenyRepo;
     @Autowired private messageRepo messageRepo;
 
@@ -41,11 +39,6 @@ public class F1Controller {
     public String messages(Model model) {
         model.addAttribute("messages", messageRepo.findAll());
         return "messages";
-    }
-
-    @GetMapping("/diagram")
-    public String diagram(Model model) {
-        return "diagram";
     }
 
     @GetMapping("/crud")

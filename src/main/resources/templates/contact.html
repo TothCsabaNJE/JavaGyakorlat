@@ -8,7 +8,7 @@
 </head>
 <body>
 <div th:insert="menu"></div>
-<h1>Új eredmény hozzáadása</h1>
+<h1>Új üzenet</h1>
 <form action="#" th:action="@{/send}" th:object="${message}" method="post">
     <p><input type="text" th:field="*{sender}" placeholder="Küldő neve" required></p>
     <p><input type="text" th:field="*{message}" placeholder="Üzenet" required></p>
